@@ -25,7 +25,7 @@ class Solution(object):
             print(charList, char, charList.count(char) )
             while charList.count(char) >= 1:
                 charList.pop(0)
-                print("____", charList)
+                # print("____", charList)
             charList.append(char)
 
             if len(charList) > max:
@@ -35,7 +35,10 @@ class Solution(object):
 def main():
     string = "abcabcbb"
     solution = Solution()
-    print(solution.lengthOfLongestSubString(string))
+    # print(solution.lengthOfLongestSubString(string))
+
+    for i in range(3):
+        print(i)
 
 if __name__ == "__main__":
     main()
