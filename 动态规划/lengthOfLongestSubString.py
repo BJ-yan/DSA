@@ -19,26 +19,30 @@
 
 class Solution(object):
     def lengthOfLongestSubString(self, s):
-        charList = []
-        max = 0
-        for char in s:
-            print(charList, char, charList.count(char) )
-            while charList.count(char) >= 1:
-                charList.pop(0)
-                # print("____", charList)
-            charList.append(char)
+        result_list = []
+        maxLength = 0
 
-            if len(charList) > max:
-                max = len(charList)
+        leftIndex = 0
+        rightIndex = 0
 
-        return max
-def main():
-    string = "abcabcbb"
-    solution = Solution()
-    # print(solution.lengthOfLongestSubString(string))
+        for leftIndex in range(0, len(s)):
+            print(f"left{leftIndex}")
+            if leftIndex < rightIndex:
+                leftIndex += 1
+            while rightIndex <= len(s) - 1 and (s[rightIndex] not in result_list):
+                result_list.append(s[rightIndex])
+                print(f"right{rightIndex}, result_list {result_list}")
+                rightIndex += 1
 
-    for i in range(3):
-        print(i)
+            if len(result_list) > maxLength:
+                maxLength = len(result_list)
+            result_list.pop(0)
+            print(f"left {leftIndex} right{rightIndex}, result_list {result_list}")
+
+        return maxLength
+
 
 if __name__ == "__main__":
-    main()
+    string = "pwwkew"
+    solution = Solution()
+    print(solution.lengthOfLongestSubString(string))
