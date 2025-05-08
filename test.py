@@ -1,6 +1,10 @@
-if __name__ == "__main__":
-    max_str = "woaiheima, buguanheimahaishibaima, zhaodaogongzuojiushihaoma"
+__all__ = ['func01', 'func02']
 
-    min_str = "heima"
+def func01():
+    pass
 
-    #count统计
+def func02():
+    pass
+
+def func03():
+    print("func03 !!!")
