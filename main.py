@@ -1,5 +1,11 @@
-from test import func03
+import copy
 
 if __name__ == "__main__":
-    func03()
+
+    a = 10
+    b = copy.copy(a)
+
+    print(f"a: {id(a)}")
+    print(f"b: {id(b)}")
+
 
