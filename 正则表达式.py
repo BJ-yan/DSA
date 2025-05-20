@@ -19,5 +19,15 @@ rg_objcet = re.compile(rg)
 result = rg_objcet.sub('a', s1)
 print(result)
 
+def outer():
+    num = 5
+    def inner():
+        nonlocal num
+        num = num * 2
+        return num
+    return inner
 
-#校验开头结尾
+func = outer()
+result = func()
+
+print(result)
